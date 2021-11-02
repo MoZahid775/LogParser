@@ -1,0 +1,10 @@
+<div style="text-align: center">
+  <p style="text-align: center">
+<%= form_with url: '/homes', method: :post do |form| %>
+  <%= form.label :log, "Event Log:" %>
+  <%= form.text_area :log , size: '130x30'%>
+      <br>  <br>
+  <%= form.submit "Parse Logs" %>  <br>
+<% end %>
+  </p>
+</div>

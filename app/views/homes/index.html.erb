@@ -1,0 +1,20 @@
+
+<div style="text-align: center">
+  <br><br>
+<%=link_to 'Parse Log', "/parse_logs" %>
+</div>
+
+<% @logs_data.each do |log| %>
+  <br><br>
+  <div style=" border-bottom: 5px solid gray ">
+
+  event id:  <%= log.event_id.first(4).gsub("<", "").gsub(">", "")%><br>
+  <%= log.source_ip %><br>
+  <%= log.destination_ip %><br><br>
+  <br><br>
+  Event:<br>
+  <%= log.log_data %><br>
+  <%= link_to "Delete Event", homes_path(id: log.id), method: :delete %>
+    <br><br>
+  </div>
+<% end %>
