@@ -19,7 +19,7 @@ class HomesController < ApplicationController
     destination_ip_address = "Destination IP address: #{destination.compact.first[0]}"
 
     if src_ip_address && event_id && destination_ip_address
-      Log.create(log_data: log_event_data, source_ip: src_ip_address,  destination_ip: destination_ip_address,  event_id: event_id )
+      Log.create(log_data: params[:log], source_ip: src_ip_address,  destination_ip: destination_ip_address,  event_id: event_id )
     end
     rescue => e
       redirect_to '/'
